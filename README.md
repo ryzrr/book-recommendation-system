@@ -1,6 +1,6 @@
 # Book Recommendation Project
 
-A Flask-based web application that recommends books based on user input, using collaborative filtering and a precomputed similarity matrix.The app also uses a popularity based recommendation model which displays popular books on the home page. The app features autocomplete suggestions, popular books, and robust handling of missing book cover images.
+A FastAPI-based web application that recommends books based on user input, using collaborative filtering and a precomputed similarity matrix.The app also uses a popularity based recommendation model which displays popular books on the home page. The app features autocomplete suggestions, popular books, and robust handling of missing book cover images.
 
 ## Features
 - Book recommendations based on collaborative filtering
@@ -11,7 +11,8 @@ A Flask-based web application that recommends books based on user input, using c
 ## Project Structure
 ```
 Book-Recommendation-Project/
-├── app.py                  # Main Flask application
+├── app.py                  # Main FastAPI application
+├── requirements.txt        # Python dependencies
 ├── Books.csv               # Book metadata (large file, tracked by LFS)
 ├── Ratings.csv             # User ratings (large file, tracked by LFS)
 ├── Users.csv               # User data (large file, tracked by LFS)
@@ -20,7 +21,6 @@ Book-Recommendation-Project/
 ├── pt.pkl                  # Pickled pivot table (LFS)
 ├── similarity_scores.pkl   # Pickled similarity matrix (LFS)
 ├── templates/              # HTML templates
-├── static/                 # Static files (CSS, JS, images)
 ├── .gitattributes          # Git LFS tracking
 └── README.md               # This file
 ```
@@ -38,7 +38,7 @@ It is recommended to use a virtual environment:
 ```bash
 python -m venv env
 source env/bin/activate  # On Windows: env\Scripts\activate
-pip install flask pandas numpy scikit-learn
+pip install -r requirements.txt
 ```
 
 ### 3. Install Git LFS and pull large files
@@ -51,7 +51,21 @@ git lfs pull
 ```bash
 python app.py
 ```
-Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
+or, equivalently:
+```bash
+uvicorn app:app --reload
+```
+Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) in your browser. Interactive API docs are available at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
+
+## Routes
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/` | Home page with the top 8 popular books |
+| GET | `/recommend` | Recommendation search page |
+| POST | `/recommend_books` | Form submit (`user_input`); renders 8 similar books |
+| GET | `/get_book_suggestions?q=` | Autocomplete JSON (up to 10 titles, min 2 chars) |
+| GET | `/about` | About page |
+| GET | `/popular` | Redirects to `/` |
 
 ## Example Usage
 - Go to the homepage to see popular books.
@@ -59,7 +73,7 @@ Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 - The app will suggest similar books and display their covers and authors.
 
 ## Notes
-- This app is for demonstration/educational purposes and uses a development server.
+- This app is for demonstration/educational purposes and runs with auto-reload enabled.
 - Large files are managed with Git LFS. Make sure to install LFS before cloning/pulling.
 
 ## Credits
