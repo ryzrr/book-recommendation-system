@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - BookWise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+        .about-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        .tech-stack {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .nav-link {
+            border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 8px 16px !important;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            border-color: #343a40;
+            background-color: rgba(52, 58, 64, 0.1);
+            transform: translateY(-2px);
+        }
+        .nav-link.active {
+            border-color: #343a40;
+            background-color: rgba(52, 58, 64, 0.2);
+        }
+        .btn-outline-custom {
+            border: 2px solid #ffc107;
+            color: #ffc107;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-custom:hover {
+            background-color: #ffc107;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+        }
+    </style>
+</head>
+<body style="background-color:rgb(1, 1, 57)">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:rgb(2, 55, 148)">
+  <div class="container-fluid">
+    <a class="navbar-brand text-dark fw-bold" href="#">BookWise</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="/recommend">Recommendations</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link active text-dark" aria-current="page" href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1 style="font-size: 3rem; color: white; margin-bottom: 30px; font-weight: 700;">
+        About BookWise
+      </h1>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="about-section">
+        <h2 style="color: white; margin-bottom: 20px; font-weight: 600;">What is BookWise?</h2>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; line-height: 1.6;">
+          BookWise is an intelligent book recommendation system that uses collaborative filtering and popularity based to suggest books based on your reading preferences. 
+          Simply enter a book you love, and our AI-powered algorithm will find similar books that other readers with similar tastes have enjoyed.
+        </p>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; line-height: 1.6;">
+          Our system analyzes thousands of book ratings and user preferences to provide you with personalized recommendations that match your reading style.
+        </p>
+      </div>
+      
+      <div class="tech-stack">
+        <h3 style="color: white; margin-bottom: 20px; font-weight: 600;">Technology Stack</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <ul style="color: white; font-size: 1.1rem;">
+              <li><strong>Flask</strong> - Web Framework</li>
+              <li><strong>Pandas</strong> - Data Processing</li>
+              <li><strong>NumPy</strong> - Numerical Computing</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul style="color: white; font-size: 1.1rem;">
+              <li><strong>Pickle</strong> - Model Serialization</li>
+              <li><strong>Bootstrap</strong> - UI Framework</li>
+              <li><strong>HTML/CSS</strong> - Frontend</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="about-section">
+        <h3 style="color: white; margin-bottom: 20px; font-weight: 600;">How It Works</h3>
+        <ol style="color: rgba(255,255,255,0.9); font-size: 1.1rem; line-height: 1.8;">
+          <li>Enter a book title you enjoy in the recommendation section</li>
+          <li>Our algorithm finds books with similar rating patterns</li>
+          <li>Get personalized recommendations based on collaborative filtering</li>
+          <li>Discover new books that match your reading taste</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"></script>
+</body>
+</html>
